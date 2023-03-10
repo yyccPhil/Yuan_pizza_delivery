@@ -64,6 +64,7 @@ class random_order():
         }
         
         return json.dumps(order_dict)
+    
 
 def write_json(data, filename="orders.json"):
     with open(filename, 'w') as file:
