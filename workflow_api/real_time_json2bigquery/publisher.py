@@ -12,7 +12,7 @@ topic_path = "projects/artful-turbine-378406/topics/pizza-delivery"
 
 count = 0
 ro = random_order()
-for i in range(10):
+for i in range(10000):
 	
 	order_id = i + 1
 
