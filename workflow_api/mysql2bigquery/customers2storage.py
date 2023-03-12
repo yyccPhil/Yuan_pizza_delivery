@@ -4,7 +4,7 @@ from oauth2client.client import GoogleCredentials
 credentials = GoogleCredentials.get_application_default()
 service = discovery.build('storage', 'v1', credentials=credentials)
 
-filename = '..\\customers.csv'
+filename = 'customers.csv'
 bucket = 'artful-turbine-378406'
 
 body = {'name': 'customers.csv'}
