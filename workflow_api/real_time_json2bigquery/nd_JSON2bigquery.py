@@ -38,7 +38,7 @@ table_schema = {
         'mode': 'NULLABLE'
     },{
         'name': 'order_date',
-        'type': 'TIMESTAMP',
+        'type': 'DATETIME',
         'mode': 'NULLABLE'
     }
 
