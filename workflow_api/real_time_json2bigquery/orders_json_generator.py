@@ -70,6 +70,12 @@ def write_json(data, filename="orders.json"):
     with open(filename, 'w') as file:
         json.dump(data, file, indent=2)
 
+def is_date_yesterday(strtime):
+    yesterday = (datetime.now() - timedelta(days=1)).strftime('%m%d%y')
+    order_date = (datetime.strptime(strtime, "%Y-%m-%d %I:%M:%S")).strftime('%m%d%y')
+    return yesterday == order_date
+
+
 
 if __name__ == "__main__":
     
@@ -90,8 +96,8 @@ if __name__ == "__main__":
     
     # Convert nested json to newline-delimited json
     with open("orders.json", 'r') as file:
-        data = '\n'.join([json.dumps(record) for record in json.load(file)["orders"]])
+        data = '\n'.join([json.dumps(record) for record in json.load(file)["orders"] if is_date_yesterday(record["order_date"])])
         
-    with open("orders.json", 'w') as file:    
+    with open("orders_yesterday.json", 'w') as file:    
         file.write(data)
    

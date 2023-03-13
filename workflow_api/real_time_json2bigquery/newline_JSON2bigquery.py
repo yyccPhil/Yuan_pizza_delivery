@@ -56,7 +56,7 @@ job_config.source_format = bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
 job_config.schema = format_schema(table_schema)
 
 
-with open('orders.json', 'rb') as source_file:
+with open('orders_yesterday.json', 'rb') as source_file:
     job = client.load_table_from_file(
         source_file,
         table,
